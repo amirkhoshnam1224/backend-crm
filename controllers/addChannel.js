@@ -34,3 +34,4 @@ const getChannels = async (req, res) => {
 };
 
 module.exports = { addChannel, getChannels };
+ 
