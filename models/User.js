@@ -1,6 +1,5 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-// تعریف اسکیمای کاربر
 const userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
@@ -15,7 +14,6 @@ const userSchema = new mongoose.Schema({
   referral: String,
 });
 
-// تعریف مدل کاربر
-const User = mongoose.model('User', userSchema);
+const CRMUser = mongoose.models.CRMUser || mongoose.model("CRMUser", userSchema);
 
-module.exports = User;
+module.exports = CRMUser;
