@@ -1,5 +1,5 @@
 const express = require("express");
-const { addChannel, getChannels } = require("../controllers/addChannel");
+const { addChannel, getChannels } = require("../controllers/telegramController");
 
 const router = express.Router();
 
