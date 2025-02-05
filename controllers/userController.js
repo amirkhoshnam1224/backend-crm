@@ -34,4 +34,22 @@ const deleteUser = async (req, res) => {
   }
 };
 
-module.exports = { getUsers, addUser, deleteUser };
+// ویرایش کاربر
+const updateUser = async (req, res) => {
+  const id = req.params.id.trim();
+  const updatedData = req.body;
+
+  try {
+    const updatedUser = await CRMUser.findByIdAndUpdate(id, updatedData, { new: true });
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: "کاربر پیدا نشد" });
+    }
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    res.status(500).json({ message: "خطا در ویرایش کاربر", error: error.message });
+  }
+};
+
+module.exports = { getUsers, addUser, deleteUser,updateUser };
