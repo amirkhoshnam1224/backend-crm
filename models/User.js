@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
+  configId: { type: String, required: false } ,
   accountId: String,
   startDate: Date,
   endDate: Date,
