@@ -13,6 +13,8 @@ const userSchema = new mongoose.Schema({
   payment: Number,
   discount: Number,
   referral: String,
+  status: { type: String, default: "active" },
+
 });
 
 const CRMUser = mongoose.models.CRMUser || mongoose.model("CRMUser", userSchema);
